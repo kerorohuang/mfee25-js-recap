@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>arrayExercise</title>
+  </head>
+  <body>
+    <script>
+      const animals = [
+        { id: "a1", en: "cat", cn: "貓", num: 30 },
+        { id: "a2", en: "dog", cn: "狗", num: 10 },
+        { id: "a3", en: "rabbit", cn: "兔", num: 5 },
+        { id: "a4", en: "bear", cn: "熊", num: 15 },
+        { id: "a5", en: "mouse", cn: "鼠", num: 20 },
+      ];
+
+      let eachObject = animals.map((value, index) => {
+        let size = { size: "small" };
+        let newObjs = { ...value, ...size };
+        // console.log(newObjs);
+        return newObjs;
+      });
+
+      // 找熊， size -> large
+      let findA4 = eachObject.find((value, index) => {
+        if (value.cn === "熊") {
+          value["small"] = "large";
+          // console.log(value);
+        }
+      });
+
+      // 用展開運算子在 index = 2 的資料後面新增一筆資料
+      //   console.log(eachObject);
+      eachObject.splice(3, 0, {
+        id: "a35",
+        en: "pig",
+        cn: "豬",
+        num: 3,
+        size: "medium",
+      });
+        // console.log(eachObject);
+
+      //   找到此時數量 <10 的第一個動物，印出它的中文名稱
+      let findLessThen10 = eachObject.find((animal, index) => {
+          return animal.num < 10;
+      }).cn;
+    //   console.log(findLessThen10);
+    </script>
+  </body>
+</html>
