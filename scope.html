@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>作用域 Scope</title>
+  </head>
+  <body>
+    <script>
+      // Function Scope函式作用域
+      function scope() {
+        var varFunc = 1; // 只有在 function 內讀得到
+        let letFunc = 1; // 只有在 function 內讀得到
+      }
+      //   console.log(varFunc);
+      //   console.log(letFunc);
+
+      if (true) {
+        var varBlock = 2; // 所有地方都讀得到
+        let letBlock = 2; // 陳述式之外都讀不到
+      }
+      //   console.log(varBlock);
+      //   console.log(letBlock);
+    </script>
+  </body>
+</html>
