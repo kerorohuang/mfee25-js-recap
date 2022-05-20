@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>函式 Function</title>
+  </head>
+  <body>
+    <script>
+      // 宣告 Function 函數陳述式
+      function add(a, b) {
+        return a + b;
+      }
+      let aPlusB = add(1, 2);
+      console.log(aPlusB);
+
+      // Function Expression
+      let subtract = function (a, b) {
+        return a - b;
+      };
+
+      // 箭頭函式 Arrow Function
+      let multiply = (a, b) => {
+        return a * b;
+      };
+
+      let multiply2 = (a, b) => a * b;   // 自帶 return
+
+      let print = str => console.log('str');
+
+      // 立即執行函式
+      (function(a, b){
+          return a / b;
+      })();
+
+      ((a, b) => {
+          return a / b;
+      })(4, 2);
+    </script>
+  </body>
+</html>
